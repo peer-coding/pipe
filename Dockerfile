@@ -1,5 +1,5 @@
 # Stage 1: Install dependencies
-FROM golang:1.24.3-alpine AS deps
+FROM golang:1.25-alpine AS deps
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ COPY go.mod go.sum ./
 RUN go mod download
 
 # Stage 2: Build the application
-FROM golang:1.24.3-alpine AS builder
+FROM golang:1.25-alpine AS builder
 
 WORKDIR /app
 
